@@ -28,6 +28,12 @@ namespace Platform
 
             app.Use(async (context, next) =>
             {
+                await next();
+                await context.Response.WriteAsync($"\nStatus code: {context.Response.StatusCode}");
+            });
+
+            app.Use(async (context, next) =>
+            {
                 if (context.Request.Method == HttpMethods.Get
                     && context.Request.Query["custom"] == "true")
                 {
@@ -38,6 +44,7 @@ namespace Platform
             });
 
             app.UseMiddleware<QueryStringMiddleware>();
+            app.UseMiddleware<QueryStringMiddlewareFalse>();
 
             app.UseRouting();
 
