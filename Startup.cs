@@ -21,25 +21,14 @@ namespace Platform
             });
         }
         
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<MessageOptions> msgOptions)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Use(async (context, next) =>
-            {
-                if (context.Request.Path == "/location")
-                {
-                    MessageOptions opts = msgOptions.Value;
-                    await context.Response.WriteAsync($"{opts.CityName}, {opts.CountryName}");
-                }
-                else
-                {
-                    await next();
-                }
-            });
+            app.UseMiddleware<LocationMiddleware>();
 
             app.UseRouting();
 
