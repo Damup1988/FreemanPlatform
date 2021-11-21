@@ -15,29 +15,16 @@ namespace Platform
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<MessageOptions>(options =>
-            {
-                options.CityName = "Albany";
-            });
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
+            app.UseDeveloperExceptionPage();
+            app.UseMiddleware<Population>();
+            app.UseMiddleware<Capital>();
+            app.Use(async (context, next) =>
             {
-                app.UseDeveloperExceptionPage();
-            }
-
-            app.UseMiddleware<LocationMiddleware>();
-
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                await context.Response.WriteAsync("Terminal Middleware Reached");
             });
         }
     }
