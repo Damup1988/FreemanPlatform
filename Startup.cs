@@ -25,7 +25,7 @@ namespace Platform
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("files/{filename}.{ext}", async context =>
+                endpoints.MapGet("{first}/{second}/{*catchall}", async context =>
                 {
                     await context.Response.WriteAsync("Request Was Routed\n");
                     foreach (var kvp in context.Request.RouteValues)
