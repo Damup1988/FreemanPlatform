@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 
@@ -32,8 +33,9 @@ namespace Platform
                         await context.Response.WriteAsync($"{kvp.Key}: {kvp.Value}\n");
                     }
                 });
-                endpoints.MapGet("capital/{country}", Capital.Endoiint);
-                endpoints.MapGet("population/{city}", Population.Endpoint);
+                endpoints.MapGet("capital/{country}", Capital.Endpoint);
+                endpoints.MapGet("size/{city}", Population.Endpoint)
+                    .WithMetadata(new RouteNameMetadata("population"));
             });
             
             app.Use(async (context, next) =>
