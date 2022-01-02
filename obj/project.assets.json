@@ -208,25 +208,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SafarovDT\\.nuget\\packages\\": {}
+    "C:\\Users\\safarovd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\_ONEDRIVE\\OneDrive\\_Coding\\_Projects\\Freeman\\Platform\\Platform.csproj",
+      "projectUniqueName": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
       "projectName": "Platform",
-      "projectPath": "D:\\_ONEDRIVE\\OneDrive\\_Coding\\_Projects\\Freeman\\Platform\\Platform.csproj",
-      "packagesPath": "C:\\Users\\SafarovDT\\.nuget\\packages\\",
-      "outputPath": "D:\\_ONEDRIVE\\OneDrive\\_Coding\\_Projects\\Freeman\\Platform\\obj\\",
+      "projectPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
+      "packagesPath": "C:\\Users\\safarovd\\.nuget\\packages\\",
+      "outputPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\SafarovDT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\safarovd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/GDC-Russia/8377112a-90a9-4591-b0bb-d16ed17cdc4c/_packaging/TicketManager/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -267,7 +270,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.209\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
