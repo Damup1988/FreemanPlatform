@@ -33,7 +33,7 @@ namespace Platform
                         await context.Response.WriteAsync($"{kvp.Key}: {kvp.Value}\n");
                     }
                 });
-                endpoints.MapGet("capital/{country=France}", Capital.Endpoint);
+                endpoints.MapGet("capital/{country:regex(^uk|france|monaco$)}", Capital.Endpoint);
                 endpoints.MapGet("size/{city?}", Population.Endpoint)
                     .WithMetadata(new RouteNameMetadata("population"));
             });
