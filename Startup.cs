@@ -27,16 +27,32 @@ namespace Platform
             app.UseDeveloperExceptionPage();
             app.UseRouting();
 
+            app.Use(async (context, next) =>
+            {
+                Endpoint end = context.GetEndpoint();
+                if (end != null)
+                {
+                    await context.Response.WriteAsync($"{end.DisplayName} Selected \n");
+                }
+                else
+                {
+                    await context.Response.WriteAsync("No endpoint selected \n");
+                }
+                await next();
+            });
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.Map("{number:int}", async context =>
                 {
                     await context.Response.WriteAsync("Routed to the int endpoint");
-                }).Add(b => ((RouteEndpointBuilder)b).Order = 1);
+                }).WithDisplayName("Int endpoint")
+                    .Add(b => ((RouteEndpointBuilder)b).Order = 1);
                 endpoints.Map("{number:double}", async context =>
                 {
                     await context.Response.WriteAsync("Routed to the double endpoint");
-                }).Add(b => ((RouteEndpointBuilder)b).Order = 2);
+                }).WithDisplayName("Double endpoint")
+                    .Add(b => ((RouteEndpointBuilder)b).Order = 2);
             });
             
             app.Use(async (context, next) =>
