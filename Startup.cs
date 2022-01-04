@@ -9,55 +9,40 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Platform.Services;
 
 namespace Platform
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.Configure<RouteOptions>(opts =>
-            {
-                opts.ConstraintMap.Add("countryName", typeof(CountryRouteConstraint));
-            });
-        }
+        public void ConfigureServices(IServiceCollection services) { }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
+            app.UseMiddleware<WeatherMiddleware>();
 
+            IResponseFormatter formatter = new TextResponseFormatter();
             app.Use(async (context, next) =>
             {
-                Endpoint end = context.GetEndpoint();
-                if (end != null)
+                if (context.Request.Path == "/middleware/function")
                 {
-                    await context.Response.WriteAsync($"{end.DisplayName} Selected \n");
+                    await formatter.Format(context, "Middleware Function: It is snowing in Chicago");
                 }
                 else
                 {
-                    await context.Response.WriteAsync("No endpoint selected \n");
+                    await next();
                 }
-                await next();
             });
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.Map("{number:int}", async context =>
+                endpoints.MapGet("/endpoint/class", WeatherEndpoint.Endpoint);
+                endpoints.MapGet("/endpoint/function", async context =>
                 {
-                    await context.Response.WriteAsync("Routed to the int endpoint");
-                }).WithDisplayName("Int endpoint")
-                    .Add(b => ((RouteEndpointBuilder)b).Order = 1);
-                endpoints.Map("{number:double}", async context =>
-                {
-                    await context.Response.WriteAsync("Routed to the double endpoint");
-                }).WithDisplayName("Double endpoint")
-                    .Add(b => ((RouteEndpointBuilder)b).Order = 2);
-            });
-            
-            app.Use(async (context, next) =>
-            {
-                await context.Response.WriteAsync("Terminal Middleware Reached");
+                    await context.Response.WriteAsync("Endpoint Function: It is sunny in LA");
+                });
             });
         }
     }
