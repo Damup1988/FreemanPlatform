@@ -1,5 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Platform.Services;
 
 namespace Platform
 {
@@ -7,7 +9,9 @@ namespace Platform
     {
         public static async Task Endpoint(HttpContext context)
         {
-            await context.Response.WriteAsync("Endpoint Class: It is cloudy in Milan");
+            IResponseFormatter formatter =
+                context.RequestServices.GetRequiredService<IResponseFormatter>();
+            await formatter.Format(context, "Endpoint Class: It is cloudy in Milan");
         }
     }
 }
