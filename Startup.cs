@@ -15,9 +15,13 @@ namespace Platform
 {
     public class Startup
     {
-        public void ConfigureServices(IServiceCollection services) { }
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.AddSingleton<IResponseFormatter, HtmlResponseFormatter>();
+        }
         
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            IResponseFormatter formatter)
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
@@ -27,7 +31,7 @@ namespace Platform
             {
                 if (context.Request.Path == "/middleware/function")
                 {
-                    await TypeBroker.Formatter.Format(
+                    await formatter.Format(
                         context, "Middleware Function: It is snowing in Chicago");
                 }
                 else
@@ -41,7 +45,7 @@ namespace Platform
                 endpoints.MapGet("/endpoint/class", WeatherEndpoint.Endpoint);
                 endpoints.MapGet("/endpoint/function", async context =>
                 {
-                    await TypeBroker.Formatter.Format(
+                    await formatter.Format(
                     context, "Endpoint Function: It is sunny in LA");
                 });
             });
