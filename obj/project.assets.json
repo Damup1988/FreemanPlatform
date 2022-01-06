@@ -208,28 +208,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\safarovd\\.nuget\\packages\\": {}
+    "C:\\Users\\damup1988\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
+      "projectUniqueName": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\Platform.csproj",
       "projectName": "Platform",
-      "projectPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
-      "packagesPath": "C:\\Users\\safarovd\\.nuget\\packages\\",
-      "outputPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\obj\\",
+      "projectPath": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\Platform.csproj",
+      "packagesPath": "C:\\Users\\damup1988\\.nuget\\packages\\",
+      "outputPath": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\safarovd\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\damup1988\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/GDC-Russia/8377112a-90a9-4591-b0bb-d16ed17cdc4c/_packaging/TicketManager/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -262,6 +259,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.13, 5.0.13]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[5.0.0, 5.0.0]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -270,7 +285,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Users\\damup1988\\.dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
       }
     }
   }
