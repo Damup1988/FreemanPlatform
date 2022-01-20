@@ -7,15 +7,15 @@ namespace Platform
     public class WeatherMiddleware
     {
         private readonly RequestDelegate _next;
-        private IResponseFormatter _formatter;
+        //private IResponseFormatter _formatter;
 
-        public WeatherMiddleware(RequestDelegate next, IResponseFormatter formatter)
+        public WeatherMiddleware(RequestDelegate next)
         {
             _next = next;
-            _formatter = formatter;
+            //_formatter = formatter;
         }
 
-        public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context, IResponseFormatter _formatter)
         {
             if (context.Request.Path == "/middleware/class")
             {

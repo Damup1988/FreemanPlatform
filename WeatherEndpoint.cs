@@ -7,14 +7,14 @@ namespace Platform
 {
     public class WeatherEndpoint
     {
-        private readonly IResponseFormatter _formatter;
+        //private readonly IResponseFormatter _formatter;
 
-        public WeatherEndpoint(IResponseFormatter formatter)
-        {
-            _formatter = formatter;
-        }
+        // public WeatherEndpoint(IResponseFormatter formatter)
+        // {
+        //     _formatter = formatter;
+        // }
         
-        public async Task Endpoint(HttpContext context)
+        public async Task Endpoint(HttpContext context, IResponseFormatter _formatter)
         {
             await _formatter.Format(context, "Endpoint Class: It is cloudy in Milan");
         }
