@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
 using Platform.Services;
@@ -15,6 +16,13 @@ namespace Platform
 {
     public class Startup
     {
+        private IConfiguration _configuration;
+        
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IResponseFormatter, TimeResponseFormatter>();
