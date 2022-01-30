@@ -25,15 +25,10 @@ namespace Platform
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IResponseFormatter>(serviceProvider =>
-            {
-                string typeName = _configuration["services:IResponseFormatter"];
-                return (IResponseFormatter)ActivatorUtilities
-                    .CreateInstance(serviceProvider, typeName == null
-                        ? typeof(GuidService)
-                        : Type.GetType(typeName, true));
-            });
             services.AddScoped<ITimeStamper, DefaultTimeStamper>();
+            services.AddScoped<IResponseFormatter, TextResponseFormatter>();
+            services.AddScoped<IResponseFormatter, HtmlResponseFormatter>();
+            services.AddScoped<IResponseFormatter, GuidService>();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,12 +53,17 @@ namespace Platform
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapEndpoint<WeatherEndpoint>("/endpoint/class");
-                endpoints.MapGet("/endpoint/function", async context =>
+                endpoints.MapGet("/single", async context =>
                 {
                     IResponseFormatter formatter = context.RequestServices.GetService<IResponseFormatter>();
-                    await formatter.Format(
-                    context, "Endpoint Function: It is sunny in LA");
+                    if (formatter != null) await formatter.Format(context, "Single service");
+                });
+
+                endpoints.MapGet("/", async context =>
+                {
+                    IResponseFormatter formatter = context.RequestServices.GetServices<IResponseFormatter>()
+                        .First(f => f.RichOutput);
+                    await formatter.Format(context, "Multiple services");
                 });
             });
         }
