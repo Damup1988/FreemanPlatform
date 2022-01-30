@@ -25,7 +25,14 @@ namespace Platform
         
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IResponseFormatter, TimeResponseFormatter>();
+            services.AddScoped<IResponseFormatter>(serviceProvider =>
+            {
+                string typeName = _configuration["services:IResponseFormatter"];
+                return (IResponseFormatter)ActivatorUtilities
+                    .CreateInstance(serviceProvider, typeName == null
+                        ? typeof(GuidService)
+                        : Type.GetType(typeName, true));
+            });
             services.AddScoped<ITimeStamper, DefaultTimeStamper>();
         }
         
