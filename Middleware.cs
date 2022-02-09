@@ -56,20 +56,20 @@ namespace Platform
 
     public class LocationMiddleware
     {
-        private RequestDelegate _next;
-        private MessageOptions _optons;
+        private readonly RequestDelegate _next;
+        private readonly MessageOptions _options;
 
         public LocationMiddleware(RequestDelegate nextDelegate, IOptions<MessageOptions> opts)
         {
             _next = nextDelegate;
-            _optons = opts.Value;
+            _options = opts.Value;
         }
 
         public async Task Invoke(HttpContext context)
         {
             if (context.Request.Path == "/location")
             {
-                await context.Response.WriteAsync($"{_optons.CityName}, {_optons.CountryName}");
+                await context.Response.WriteAsync($"{_options.CityName}, {_options.CountryName}");
             }
             else
             {

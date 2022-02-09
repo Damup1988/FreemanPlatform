@@ -25,13 +25,15 @@ namespace Platform
         
         public void ConfigureServices(IServiceCollection services)
         {
-            // configuration data can be accessed here
+            services.Configure<MessageOptions>(ConfigService.GetSection("Location"));
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
+
+            app.UseMiddleware<LocationMiddleware>();
             
             app.Use(async (context, next) =>
             {
