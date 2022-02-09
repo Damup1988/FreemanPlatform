@@ -20,10 +20,17 @@ namespace Platform
         {
         }
         
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IConfiguration config)
         {
             app.UseDeveloperExceptionPage();
             app.UseRouting();
+            
+            app.Use(async (context, next) =>
+            {
+                string defaultDebug = config["Logging:LogLevel:Default"];
+                await context.Response.WriteAsync($"The config settings is: {defaultDebug}");
+            });
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapGet("/", async context =>
