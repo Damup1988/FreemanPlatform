@@ -44,6 +44,10 @@ namespace Platform
                 await context.Response.WriteAsync($"The config settings is: {defaultDebug}");
                 string environ = ConfigService["ASPNETCORE_ENVIRONMENT"];
                 await context.Response.WriteAsync($"\nThe env setting is: {environ}");
+                string wsID = ConfigService["WebService:Id"];
+                string wsKey = ConfigService["WebService:Key"];
+                await context.Response.WriteAsync($"\nThe secret ID is: {wsID}");
+                await context.Response.WriteAsync($"\nThe secret Key is: {wsKey}");
             });
             
             app.UseEndpoints(endpoints =>
