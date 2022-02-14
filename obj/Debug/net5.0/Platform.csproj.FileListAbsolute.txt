@@ -42,7 +42,6 @@ C:\_bufer\!dotNet\Freeman\FreemanPlatform\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csprojAssemblyReference.cache
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.GeneratedMSBuildEditorConfig.editorconfig
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.AssemblyInfoInputs.cache
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.AssemblyInfo.cs
@@ -50,7 +49,6 @@ C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csproj.CoreC
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.MvcApplicationPartsAssemblyInfo.cs
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.MvcApplicationPartsAssemblyInfo.cache
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\staticwebassets\Platform.StaticWebAssets.Manifest.cache
-C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\staticwebassets\Platform.StaticWebAssets.xml
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\scopedcss\bundle\Platform.styles.css
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.RazorTargetAssemblyInfo.cache
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csproj.CopyComplete
@@ -88,3 +86,4 @@ C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\ref\Platform.dll
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.pdb
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.genruntimeconfig.cache
+C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csproj.AssemblyReference.cache

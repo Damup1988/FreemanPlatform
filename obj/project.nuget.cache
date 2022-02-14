@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ygaJg+E2feh0la8EgSCYj2bOxxvyOBnXvlZEfA8cR5xiGg/IJFrh8RcFumY6K8+iGrXvh3/PbdIdSl9acoHV5Q==",
+  "dgSpecHash": "hnpdnyGJA0wtbVa3X42wfwDuCPjQP6/42emey3/3Sui1FyNxlHbgt6xWGvgQqDBsDfEQPeIeeF1pa65OgWufsw==",
   "success": true,
   "projectFilePath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,8 @@
     "C:\\Users\\safarovd\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
     "C:\\Users\\safarovd\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
     "C:\\Users\\safarovd\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
-    "C:\\Users\\safarovd\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+    "C:\\Users\\safarovd\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512",
+    "C:\\Users\\safarovd\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.12\\microsoft.netcore.app.host.win-x64.5.0.12.nupkg.sha512"
   ],
   "logs": []
 }
