@@ -30,7 +30,10 @@ namespace Platform
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();                
+            }
             app.UseRouting();
 
             app.UseMiddleware<LocationMiddleware>();
