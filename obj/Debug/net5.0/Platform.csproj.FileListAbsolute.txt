@@ -59,13 +59,11 @@ C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.genruntimeco
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\appsettings.Development.json
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\appsettings.json
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\global.json
-C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.StaticWebAssets.xml
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.exe
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.deps.json
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.runtimeconfig.json
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.runtimeconfig.dev.json
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.dll
-C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\ref\Platform.dll
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Platform.pdb
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Microsoft.OpenApi.dll
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -87,3 +85,4 @@ C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\ref\Platf
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.pdb
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.genruntimeconfig.cache
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csproj.AssemblyReference.cache
+C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\refint\Platform.dll
