@@ -18,45 +18,18 @@ namespace Platform
 {
     public class Startup
     {
-        private IConfiguration ConfigService { get; set; }
-        
-        public Startup(IConfiguration configService)
-        {
-            ConfigService = configService;
-        }
-        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<MessageOptions>(ConfigService.GetSection("Location"));
         }
         
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
+        public void Configure(IApplicationBuilder app)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();                
-            }
-
-            app.UseStaticFiles();
-
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider($"{env.ContentRootPath}/staticfiles"),
-                RequestPath = "/files"
-            });
-            
+            app.UseDeveloperExceptionPage();
             app.UseRouting();
-
-            app.UseMiddleware<LocationMiddleware>();
-            
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    logger.LogDebug("Response for / started");
-                    await context.Response.WriteAsync("Hello Word!");
-                    logger.LogDebug("Response for / completed");
-                });
+                endpoints.MapFallback(async context =>
+                    await context.Response.WriteAsync("Hello world!"));
             });
         }
     }
