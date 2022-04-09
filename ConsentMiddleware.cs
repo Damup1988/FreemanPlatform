@@ -6,11 +6,11 @@ namespace Platform
 {
     public class ConsentMiddleware
     {
-        private RequestDelegate next;
+        private readonly RequestDelegate _next;
 
         public ConsentMiddleware(RequestDelegate nextDelegate)
         {
-            next = nextDelegate;
+            _next = nextDelegate;
         }
 
         public async Task Invoke(HttpContext context)
@@ -32,7 +32,7 @@ namespace Platform
                     : "Consent Withdrawn\n");
             }
 
-            await next(context);
+            await _next(context);
         }
     }
 }
