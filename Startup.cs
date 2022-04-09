@@ -52,10 +52,23 @@ namespace Platform
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            app.UseStatusCodePages("text/html", ResponseStrings.DefaultResponse);
             app.UseCookiePolicy();
             app.UseStaticFiles();
             app.UseMiddleware<ConsentMiddleware>();
             app.UseSession();
+
+            app.Use(async (context, next) =>
+            {
+                if (context.Request.Path == "/error")
+                {
+                    context.Response.StatusCode = StatusCodes.Status404NotFound;
+                }
+                else
+                {
+                    await next();
+                }
+            });
             
             app.Run(context => throw new Exception("Something has gone wrong"));
         }
