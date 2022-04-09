@@ -32,11 +32,21 @@ namespace Platform
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.Cookie.IsEssential = true;
             });
+
+            services.AddHsts(opts =>
+            {
+                opts.MaxAge = TimeSpan.FromDays(1);
+                opts.IncludeSubDomains = true;
+            });
         }
         
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
+            if (env.IsProduction())
+            {
+                app.UseHsts();
+            }
             app.UseHttpsRedirection();
             app.UseCookiePolicy();
             app.UseMiddleware<ConsentMiddleware>();
