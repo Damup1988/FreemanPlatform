@@ -24,6 +24,14 @@ namespace Platform
             {
                 opts.CheckConsentNeeded = context => true;
             });
+
+            services.AddDistributedMemoryCache();
+
+            services.AddSession(optiopns =>
+            {
+                optiopns.IdleTimeout = TimeSpan.FromMinutes(30);
+                optiopns.Cookie.IsEssential = true;
+            });
         }
         
         public void Configure(IApplicationBuilder app)
