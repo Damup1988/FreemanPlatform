@@ -42,13 +42,18 @@ namespace Platform
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseDeveloperExceptionPage();
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            app.UseExceptionHandler("/error.html");
             if (env.IsProduction())
             {
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
             app.UseCookiePolicy();
+            app.UseStaticFiles();
             app.UseMiddleware<ConsentMiddleware>();
             app.UseSession();
             
