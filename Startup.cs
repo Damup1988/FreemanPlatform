@@ -19,11 +19,20 @@ namespace Platform
 {
     public class Startup
     {
+        private IConfiguration _configuration;
+        
+        public Startup(IConfiguration configuration)
+        {
+            _configuration = configuration;
+        }
+        
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDistributedMemoryCache(opts =>
+            services.AddDistributedSqlServerCache(opts =>
             {
-                opts.SizeLimit = 200;
+                opts.ConnectionString = _configuration["ConnectionsStrings:CacheConnection"];
+                opts.SchemaName = "dbo";
+                opts.TableName = "DataCache";
             });
         }
         
