@@ -87,3 +87,4 @@ C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\Platform.
 C:\_bufer\!dotNet\Freeman\FreemanPlatform\obj\Debug\net5.0\Platform.csproj.AssemblyReference.cache
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\obj\Debug\net5.0\refint\Platform.dll
 C:\_oneDrive\OneDrive\_Coding\_Projects\RiderProjects\bin\Debug\net5.0\libman.json
+C:\_bufer\!dotNet\Freeman\FreemanPlatform\bin\Debug\net5.0\libman.json

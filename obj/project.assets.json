@@ -208,25 +208,28 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\damup1988\\.nuget\\packages\\": {}
+    "C:\\Users\\safarovd\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\Platform.csproj",
+      "projectUniqueName": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
       "projectName": "Platform",
-      "projectPath": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\Platform.csproj",
-      "packagesPath": "C:\\Users\\damup1988\\.nuget\\packages\\",
-      "outputPath": "C:\\_oneDrive\\OneDrive\\_Coding\\_Projects\\RiderProjects\\obj\\",
+      "projectPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\Platform.csproj",
+      "packagesPath": "C:\\Users\\safarovd\\.nuget\\packages\\",
+      "outputPath": "C:\\_bufer\\!dotNet\\Freeman\\FreemanPlatform\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\damup1988\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\safarovd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/GDC-Russia/8377112a-90a9-4591-b0bb-d16ed17cdc4c/_packaging/TicketManager/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net5.0": {
@@ -259,6 +262,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[5.0.12, 5.0.12]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -267,7 +276,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
