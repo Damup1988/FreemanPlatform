@@ -30,15 +30,18 @@ namespace Platform
         {
             services.AddDistributedSqlServerCache(opts =>
             {
-                opts.ConnectionString = _configuration["ConnectionsStrings:CacheConnection"];
+                opts.ConnectionString = _configuration["ConnectionStrings:CacheConnection"];
                 opts.SchemaName = "dbo";
                 opts.TableName = "DataCache";
             });
+            services.AddResponseCaching();
+            services.AddSingleton<IResponseFormatter, HtmlResponseFormatter>();
         }
         
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
+            app.UseResponseCaching();
             app.UseStaticFiles();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
