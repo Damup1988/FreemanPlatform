@@ -21,7 +21,7 @@ namespace Platform
 {
     public class Startup
     {
-        private IConfiguration _configuration;
+        private readonly IConfiguration _configuration;
         
         public Startup(IConfiguration configuration)
         {
@@ -42,9 +42,11 @@ namespace Platform
             {
                 opts.UseSqlServer(_configuration["ConnectionStrings:CalcConnection"]);
             });
+            services.AddTransient<SeedData>();
         }
         
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            IHostApplicationLifetime lifetime, SeedData seedData)
         {
             app.UseDeveloperExceptionPage();
             app.UseResponseCaching();
@@ -56,9 +58,18 @@ namespace Platform
                 
                 endpoints.MapGet("/", async context =>
                 {
-                    await context.Response.WriteAsync("Hello world!");
+                    await context.Response.WriteAsync($"Hello world! Env: {env.EnvironmentName}");
                 });
             });
+            bool cmdLineInit = (_configuration["INITDB"] ?? "false") == "true";
+            if (env.IsDevelopment())
+            {
+                seedData.SeedDataBase();
+                if (cmdLineInit)
+                {
+                    lifetime.StopApplication();
+                }
+            }
         }
     }
 }
